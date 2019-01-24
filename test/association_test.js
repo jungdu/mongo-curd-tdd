@@ -30,13 +30,12 @@ describe('Associations', () => {
     User.findOne({name: 'Joe'})
       .populate('blogPosts')
       .then(user => {
-        console.log(user);
         assert(user.blogPosts[0].title === 'JS is Great')
         done();
       });
   })
 
-  it.only('saves a full relation tree', done => {
+  it('saves a full relation tree', done => {
     User.findOne({name: 'Joe'})
       .populate({
         path:'blogPosts',
