@@ -19,7 +19,7 @@ describe('Middle ware', ()=> {
       .then(() => done());
   })
 
-  it.only('users clean up danglin gblogposts on delete', done => {
+  it('users clean up danglin gblogposts on delete', done => {
     joe.remove()
       .then(() => BlogPost.count())
       .then(count => {
